@@ -61,11 +61,11 @@ function App() {
     setSessonTime(25);
     setTitlePlay("play");
     const audio = document.getElementById("beep");
-    audio.pause()
+    audio.pause();
     audio.currentTime = 0;
   }
 
-  function resetTimer(){
+  function resetTimer() {
     const audio = document.getElementById("beep");
     if (!timeLeft && titlePlay === "play") {
       setTimeLeft(breakTime * 60);
@@ -81,16 +81,16 @@ function App() {
   }
 
   function clock() {
-    if(play){
-      resetTimer()
-    }else {
-      clearTimeout(timeout)
+    if (play) {
+      resetTimer();
+    } else {
+      clearTimeout(timeout);
     }
   }
-  
+
   useEffect(() => {
-    clock()
-  }, [play, timeLeft, timeout])
+    clock();
+  }, [play, timeLeft, timeout]);
 
   const title = titlePlay === "play" ? "Session" : "Break";
 
